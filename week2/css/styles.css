@@ -1,0 +1,53 @@
+body {
+    background-color: Lavender;
+}
+
+h1 {
+    color: DarkSlateBlue;
+    font-family: Helvetica;
+}
+
+h2 {
+    color: Indigo;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+
+.title {
+    color: sienna;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.statement {
+    color: salmon;
+    font-family: Helvetica;
+}
+
+.table-header {
+    color: DarkSlateBlue;
+    font-family: Helvetica;
+    font-size: 25px;
+}
+
+.link-table {
+    color: DarkSlateBlue;
+    font-family: Helvetica;
+    font-size: 20px;
+    border: 2px solid DarkSlateBlue;
+    padding: 5px;
+    margin: 5px;
+}
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
