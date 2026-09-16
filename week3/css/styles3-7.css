@@ -1,0 +1,268 @@
+/* Global */
+body {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #EDCCBA;
+    background-image: url("../../Week1/My First Web App/img/paw-bg.svg");
+    background-repeat: repeat;
+    background-size: 120px;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Heading */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* header icon */
+.home-icon {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+/* main */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 80px;
+}
+
+
+/* Section headings */
+h2 {
+    margin-bottom: 1rem;
+}
+
+/* Bounce image */
+.bounce-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    transition: transform 1s ease;
+    pointer-events: none;
+}
+
+.section-bounce:hover .bounce-img {
+    animation: bounceMove 5s ease forwards;
+}
+
+@keyframes bounceMove {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    20% {
+        transform: translateX(10vw) translateY(-5vh);
+    }
+
+    40% {
+        transform: translateX(20vw) translateY(0);
+    }
+
+    60% {
+        transform: translateX(30vw) translateY(-3vh);
+    }
+
+    80% {
+        transform: translateX(40vw) translateY(0);
+    }
+
+    100% {
+        transform: translateX(50vw) translateY(-5vh);
+    }
+}
+
+/* Flip cards */
+.flip-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.flip-card {
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    transition-delay: 0.2s;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
+.flip-front img,
+.flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .flip-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+.home-icon {
+    width: clamp(600px, 40vw, 800px);
+    height: auto;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+/* Back-icon */
+.back-link {
+    width: clamp(150px, 10vw, 300px);
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+/* Hover effect on back link */
+.back-link:hover {
+    transform: scale(1.1);
+}
+
+/* Section headings */
+h2 {
+    margin-bottom: 1rem;
+}
+
+/* Bounce image */
+.bounce-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    transition: transform 1s ease;
+    pointer-events: none;
+}
+
+.section-bounce:hover .bounce-img {
+    animation: bounceMove 5s ease forwards;
+}
+
+@keyframes bounceMove {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    20% {
+        transform: translateX(10vw) translateY(-5vh);
+    }
+
+    40% {
+        transform: translateX(20vw) translateY(0);
+    }
+
+    60% {
+        transform: translateX(30vw) translateY(-3vh);
+    }
+
+    80% {
+        transform: translateX(40vw) translateY(0);
+    }
+
+    100% {
+        transform: translateX(50vw) translateY(-5vh);
+    }
+}
+
+/* Flip cards */
+.flip-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.flip-card {
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    transition-delay: 0.2s;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
+.flip-front img,
+.flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .flip-grid {
+        grid-template-columns: 1fr;
+    }
+}
