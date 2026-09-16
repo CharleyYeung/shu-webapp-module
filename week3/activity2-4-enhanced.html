@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Activity 2-4 Enhanced</title>
+    <link rel="stylesheet" href="css/styles-enhanced.css">
+</head>
+
+<body>
+    <header>
+        <h1>Activity 2-4</h1>
+        <h2>Enhance Your Web App 2</h2>
+    </header>
+
+    <main>
+        <p class="statement">I love my cat!</p>
+
+        <section aria-labelledby="broken-img">
+            <h3 id="broken-img">Profile Picture (Broken Link Example)</h3>
+            <img src="https://github.com/CharleyYeung/shu-webapp-module/blob/main/week1/img/cloudy.jpg"
+                class="center-img" alt="Cloudy the cat — image failed to load">
+        </section>
+        <br>
+        <section aria-labelledby="real-img">
+            <h3 id="real-img">Profile Picture (Working Link)</h3>
+            <img src="../week1/My First Web App/img/cloudy.jpg" class="center-img" width="414" height="552"
+                alt="Cloudy the cat sitting and looking at the camera">
+        </section>
+        <br>
+        <section aria-labelledby="file-table">
+            <h3 id="file-table">Available Files</h3>
+
+            <table class="link-table">
+                <thead>
+                    <tr>
+                        <th scope="col">File Type</th>
+                        <th scope="col">File Name</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Image File</td>
+                        <td>cloudy.jpg</td>
+                        <td><a href="../week1/My First Web App/img/cloudy.jpg">View cloudy.jpg</a></td>
+                    </tr>
+                    <tr>
+                        <td>Image File</td>
+                        <td>cloudy-and-parrot.JPG</td>
+                        <td><a href="../week1/My First Web App/img/cloudy-and-parrot.JPG">View cloudy-and-parrot.JPG</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Video File</td>
+                        <td>cloudy-chilling.mp4</td>
+                        <td><a href="../week1/My First Web App/img/cloudy-chilling.mp4">Watch cloudy-chilling.mp4</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
