@@ -2,8 +2,13 @@
     --color-background: #0c0b0f;
 }
 
+html,
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
     background: var(--color-background);
     font-family: "Poppins", Arial, sans-serif;
     color: #f0e5ff;
@@ -15,7 +20,6 @@ main {
     overflow-x: hidden;
     overflow-y: auto;
     perspective: 2px;
-    will-change: transform;
 }
 
 section {
@@ -36,9 +40,12 @@ section:last-child {
 .no-parallax {
     background-color: var(--color-background);
     z-index: 999;
-    padding: 50px 80px;
+    position: relative;
+    padding: 60px 80px;
     gap: 40px;
     justify-content: space-between;
+    display: flex;
+    align-items: center;
 }
 
 .no-parallax div {
@@ -53,7 +60,7 @@ section:last-child {
 .no-parallax img {
     width: 220px;
     height: auto;
-    opacity: 0.75;
+    opacity: 0.85;
     transition: opacity 0.3s ease;
 }
 
@@ -63,6 +70,24 @@ section:last-child {
 
 .parallax {
     height: 40vh;
+    position: relative;
+}
+
+.parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.bg::after {
+    background-image: url("../img/Cloudy-lookout-2.JPG");
 }
 
 h1 {
@@ -75,7 +100,6 @@ h2 {
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
-
 
 table {
     width: 100%;
@@ -108,22 +132,19 @@ a:hover {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    .no-parallax {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+    }
 
-.parallax::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateZ(-1px) scale(1.5);
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-}
+    .no-parallax img {
+        width: 165px; 
+        margin-top: 15px;
+    }
 
-.bg::after {
-    background-image: url("../week1/img/Cloudy-lookout-2.JPG");
+    section {
+        padding: 2rem 0;
+    }
 }
