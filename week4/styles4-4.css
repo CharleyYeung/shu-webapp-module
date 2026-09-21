@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #EDCCBA;
+    background-image: url("../../week1/img/paw-bg.svg");
+    background-repeat: repeat;
+    background-size: 120px;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.home-icon {
+    width: 480px;
+    height: auto;
+    position: fixed;
+    top: 15px;
+    left: 25px;
+    z-index: 1001;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 120px auto 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.photo-form {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.photo-form label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.photo-form select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 250px;
+    cursor: pointer;
+}
+
+.photo-form input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.photo-form input[type="submit"]:hover {
+    background-color: #4fa8c7;
+    color: white;
+}
+
+.image-viewer {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    border: 3px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease;
+}
+
+body:has(#cloudy-select option[value="closeup"]:checked) .image-viewer {
+    background-image: url('../../week1/img/Cloudy-face-1.JPG');
+    border: 3px solid #fff;
+}
+
+body:has(#cloudy-select option[value="lookout"]:checked) .image-viewer {
+    background-image: url('../../week1/img/Cloudy-lookout-2.JPG');
+    border: 3px solid #fff;
+}
+
+body:has(#cloudy-select option[value="yawning"]:checked) .image-viewer {
+    background-image: url('../../week1/img/Cloudy-yawning.JPG');
+    border: 3px solid #fff;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+.back-link {
+    width: 180px;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .home-icon {
+        width: 160px;
+    }
+
+    .back-link {
+        width: 180px;
+    }
+
+    .image-viewer {
+        height: 220px;
+    }
+}
