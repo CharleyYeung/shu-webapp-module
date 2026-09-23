@@ -1,10 +1,10 @@
 const diceImages = [
-    "../Week1/My First Web App/img/one.svg",
-    "../Week1/My First Web App/img/two.svg",
-    "../Week1/My First Web App/img/three.svg",
-    "../Week1/My First Web App/img/four.svg",
-    "../Week1/My First Web App/img/five.svg",
-    "../Week1/My First Web App/img/six.svg"
+    "../week1/img/one.svg",
+    "../week1/img/two.svg",
+    "../week1/img/three.svg",
+    "../week1/img/four.svg",
+    "../week1/img/five.svg",
+    "../week1/img/six.svg"
 ];
 
 const rollBtn = document.getElementById("roll-btn");
@@ -23,7 +23,7 @@ rollBtn.addEventListener("click", function () {
     if (isGameFinished) {
         playerCard.classList.remove("is-flipped");
         computerCard.classList.remove("is-flipped");
-        resultViewer.style.backgroundImage = "url('../Week1/My First Web App/img/Cloudy-wait.JPG')";
+        resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-wait.JPG')";
         resultBox.innerHTML = "Click the button to start!";
         rollBtn.innerHTML = "Click to Roll";
         isGameFinished = false;
@@ -55,13 +55,13 @@ rollBtn.addEventListener("click", function () {
             // View the result after both have rolled
             if (playerRoll > computerRoll) {
                 resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll}) 👉 <strong>You Win! 🎉</strong>`;
-                resultViewer.style.backgroundImage = "url('../Week1/My First Web App/img/Cloudy-win.JPG')";
+                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-win.JPG')";
             } else if (playerRoll < computerRoll) {
                 resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll}) 👉 <strong>Computer Wins! 😢</strong>`;
-                resultViewer.style.backgroundImage = "url('../Week1/My First Web App/img/Cloudy-lose.JPG')";
+                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-lose.JPG')";
             } else {
                 resultBox.innerHTML = `Both rolled ${playerRoll} 👉 <strong>It's a Draw! 🤝</strong>`;
-                resultViewer.style.backgroundImage = "url('../Week1/My First Web App/img/Cloudy-draw.JPG')";
+                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-draw.JPG')";
             }
 
             rollBtn.innerHTML = "Reset Game";
