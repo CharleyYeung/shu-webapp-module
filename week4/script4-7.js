@@ -54,13 +54,13 @@ rollBtn.addEventListener("click", function () {
 
             // View the result after both have rolled
             if (playerRoll > computerRoll) {
-                resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll}) 👉 <strong>You Win! 🎉</strong>`;
+                resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll})  <strong>You Win! </strong>`;
                 resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-win.jpeg')";
             } else if (playerRoll < computerRoll) {
-                resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll}) 👉 <strong>Computer Wins! 😢</strong>`;
+                resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll})  <strong>Computer Wins! </strong>`;
                 resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-lose.jpeg')";
             } else {
-                resultBox.innerHTML = `Both rolled ${playerRoll} 👉 <strong>It's a Draw! 🤝</strong>`;
+                resultBox.innerHTML = `Both rolled ${playerRoll}  <strong>It's a Draw! </strong>`;
                 resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-draw.jpeg')";
             }
 
