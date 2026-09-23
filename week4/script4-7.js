@@ -23,7 +23,7 @@ rollBtn.addEventListener("click", function () {
     if (isGameFinished) {
         playerCard.classList.remove("is-flipped");
         computerCard.classList.remove("is-flipped");
-        resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-wait.JPG')";
+        resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-wait.jpg')";
         resultBox.innerHTML = "Click the button to start!";
         rollBtn.innerHTML = "Click to Roll";
         isGameFinished = false;
@@ -55,13 +55,13 @@ rollBtn.addEventListener("click", function () {
             // View the result after both have rolled
             if (playerRoll > computerRoll) {
                 resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll}) 👉 <strong>You Win! 🎉</strong>`;
-                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-win.JPG')";
+                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-win.jpeg')";
             } else if (playerRoll < computerRoll) {
                 resultBox.innerHTML = `You (${playerRoll}) vs Computer (${computerRoll}) 👉 <strong>Computer Wins! 😢</strong>`;
-                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-lose.JPG')";
+                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-lose.jpeg')";
             } else {
                 resultBox.innerHTML = `Both rolled ${playerRoll} 👉 <strong>It's a Draw! 🤝</strong>`;
-                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-draw.JPG')";
+                resultViewer.style.backgroundImage = "url('../week1/img/Cloudy-draw.jpeg')";
             }
 
             rollBtn.innerHTML = "Reset Game";
