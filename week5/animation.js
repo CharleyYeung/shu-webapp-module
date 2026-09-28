@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 currentX += 20;
             }
-            currentY += 38; // 配合調整後的高度微調每層下落距離
+            currentY += 38; 
 
             marble.style.left = currentX + 'px';
             marble.style.top = currentY + 'px';
