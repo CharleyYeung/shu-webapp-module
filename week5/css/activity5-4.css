@@ -1,0 +1,180 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #EDCCBA;
+    background-image: url("../../Week1/My First Web App/img/paw-bg.svg");
+    background-repeat: repeat;
+    background-size: 120px;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+/* Header & Navigation */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.home-icon {
+    width: 480px;
+    height: auto;
+    position: fixed;
+    top: 15px;
+    left: 25px;
+    z-index: 1001;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 120px auto 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Simulation Container */
+#container {
+    width: 400px;
+    max-width: 400px;
+    height: 330px;
+    margin: 0 auto 1.5rem auto;
+    position: relative;
+    background: #d4edda;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.marble {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background: blue;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.2s linear;
+}
+
+.node {
+    width: 15px;
+    height: 15px;
+    background: red;
+    position: absolute;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 5;
+}
+
+/* Bins & Base */
+#base {
+    position: absolute;
+    bottom: 20px;
+    left: 105px;
+    width: 190px;
+    height: 60px;
+    background: #9e9e9e;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border: 1px solid #757575;
+    z-index: 3;
+}
+
+.bin {
+    width: 26px;
+    height: 0px;
+    background: #3f51b5;
+    border-top: 2px solid #fff;
+    transition: height 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 10px;
+    color: white;
+}
+
+/* Controls & Status */
+#controls {
+    margin-bottom: 1rem;
+}
+
+.control-button {
+    padding: 10px 22px;
+    font-size: 1.1rem;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #222;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    margin: 0 5px;
+}
+
+.control-button:hover {
+    background-color: #4fa8c7;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.control-button:active {
+    transform: scale(0.95);
+}
+
+.status-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer & Navigation */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.back-link {
+    width: 120px;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .home-icon {
+        width: 160px;
+    }
+
+    .back-link {
+        width: 100px;
+    }
+}
