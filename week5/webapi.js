@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     fetchBtn.addEventListener('pointerdown', async () => {
         const selectedTemperament = temperamentSelect.value;
-        const limitNum = rangeInput.value;
+        const limitNum = Number(rangeInput.value);
+        console.log("Current Limit:", limitNum);
     
         fetchBtn.disabled = true;
         resetBtn.disabled = true;
