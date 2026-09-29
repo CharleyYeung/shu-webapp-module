@@ -23,6 +23,7 @@ body {
 
 .home-icon {
     width: 480px;
+    max-width:300px;
     height: auto;
     position: fixed;
     top: 15px;
@@ -102,6 +103,11 @@ p {
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
+}
+
+.control-button:focus-visible {
+    outline: 3px solid #333;
+    outline-offset: 2px;
 }
 
 .status-text {
