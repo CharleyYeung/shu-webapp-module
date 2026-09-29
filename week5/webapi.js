@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetchBtn = document.getElementById('fetch-cats-btn');
     const resetBtn = document.getElementById('reset-btn');
     const temperamentSelect = document.getElementById('temperament-select');
+    const rangeInput = document.getElementById('range');
     const resultsContainer = document.getElementById('results-container');
     const statusDisplay = document.getElementById('status-display');
     const cloudyCard = document.getElementById('cloudy-card');
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     fetchBtn.addEventListener('pointerdown', async () => {
         const selectedTemperament = temperamentSelect.value;
+        const limitNum = rangeInput.value
     
         fetchBtn.disabled = true;
         resetBtn.disabled = true;
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
         try {
-            const response = await fetch(`https://api.freeapi.app/api/v1/public/cats?query=${selectedTemperament}&page=1&limit=10`);
+            const response = await fetch(`https://api.freeapi.app/api/v1/public/cats?query=${selectedTemperament}&page=1&limit=${limitNum}`);
     
             if (!response.ok) {
                 throw new Error(`Server returned status: ${response.status}`);
@@ -58,7 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
                 card.innerHTML = `
-                    <img src="${cat.image || '../../week1/img/image-loading-failure.png'}" alt="${cat.name}" class="cat-image">
+                    <img src="${cat.image || '../../week1/img/image-loading-failure.png'}" 
+                    onerror="this.onerror=null; this.src='../../week1/img/image-loading-failure.png';" 
+                    alt="${cat.name}" class="cat-image">
                     <h3>${cat.name}</h3>
                     <p><strong>Temperament:</strong> ${cat.temperament}</p>
                     <p class="cat-desc">${cat.description ? cat.description.substring(0, 100) + '...' : 'No description available.'}</p>
