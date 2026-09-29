@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
                 card.innerHTML = `
-                    <img src="${cat.image || '../week1/img/image-loading-failure.png'}" 
-                    onerror="this.onerror=null; this.src='../week1/img/image-loading-failure.png';" 
+                    <img src="${cat.image || '../week1/img/image-loading-failure.gif'}" 
+                    onerror="this.onerror=null; this.src='../week1/img/image-loading-failure.gif';" 
                     alt="${cat.name}" class="cat-image">
                     <h3>${cat.name}</h3>
                     <p><strong>Temperament:</strong> ${cat.temperament}</p>
