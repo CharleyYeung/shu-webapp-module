@@ -24,7 +24,7 @@
 
             <!-- Control Panel: Select, Fetch, and Reset Buttons -->
             <div id="controls" class="api-controls">
-                <select id="temperament-select" class="control-select">
+                <select id="temperament-select" class="control-select" aria-label="Select cat temperament">
                     <option value="sociable">Sociable</option>
                     <option value="playful">Playful</option>
                     <option value="active">Active</option>
@@ -36,7 +36,7 @@
             </div>
 
             <!-- System Status Display -->
-            <p class="status-text">Status: <span id="status-display">Idle</span></p>
+            <p class="status-text">Status: <span id="status-display" aria-live="polite">Idle</span></p>
 
             <!-- Results Grid containing Cloudy as the default card and dynamic API cards -->
             <div id="results-container" class="cat-grid">
