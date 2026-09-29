@@ -125,12 +125,11 @@ p {
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .cat-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1);
 }
 
 .cat-card.fade-out {
