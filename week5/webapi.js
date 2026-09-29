@@ -58,17 +58,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.add('cat-card', 'api-card', 'fade-out');
     
                 card.style.transitionDelay = `${index * 0.08}s`;
+                card.style.cursor = 'pointer';
     
     
+                const fallbackGif = '../week1/img/image-loading-failure.gif';
+                const targetImg = cat.image || fallbackGif;
+                
+                card.addEventListener('click', () => {
+                    window.open(targetImg, '_blank');
+                });
+                
                 card.innerHTML = `
-                    <img src="${cat.image || '../week1/img/image-loading-failure.gif'}" 
-                    onerror="this.onerror=null; this.src='../week1/img/image-loading-failure.gif';" 
+                    <img src="${targetImg}" 
+                    onerror="this.onerror=null; this.src='${fallbackGif}';" 
                     alt="${cat.name}" class="cat-image">
                     <h3>${cat.name}</h3>
                     <p><strong>Temperament:</strong> ${cat.temperament}</p>
                     <p class="cat-desc">${cat.description ? cat.description.substring(0, 100) + '...' : 'No description available.'}</p>
                 `;
-    
+            
                 resultsContainer.appendChild(card);
     
                 setTimeout(() => {
