@@ -10,6 +10,7 @@
 
 <body>
 
+    <!-- Header & Home Navigation -->
     <header class="top-header">
         <a href="../index.html">
             <img src="../week1/img/homepage.png" class="home-icon" alt="Homepage">
@@ -19,28 +20,38 @@
     <main>
         <section class="section-form">
             <h2>Cat Temperament Explorer</h2>
-            <p>Select a temperament trait and fetch cat breeds using FreeAPI!</p>
+            <p>Select a temperament trait to explore cat breeds or view our resident cat, Cloudy!</p>
 
-            <!-- control -->
+            <!-- Control Panel: Select, Fetch, and Reset Buttons -->
             <div id="controls" class="api-controls">
                 <select id="temperament-select" class="control-select">
                     <option value="sociable">Sociable</option>
                     <option value="playful">Playful</option>
                     <option value="active">Active</option>
                     <option value="gentle">Gentle</option>
+                    <option value="bossy">Bossy</option>
                 </select>
                 <button id="fetch-cats-btn" class="control-button">Fetch Cats</button>
+                <button id="reset-btn" class="control-button reset-button">Reset</button>
             </div>
 
             <!-- System Status Display -->
             <p class="status-text">Status: <span id="status-display">Idle</span></p>
 
-            <!-- Results Grid -->
+            <!-- Results Grid containing Cloudy as the default card and dynamic API cards -->
             <div id="results-container" class="cat-grid">
-                <!-- dynamically generated cat cards -->
+                <!-- Default Resident Card: Cloudy -->
+                <div id="cloudy-card" class="cat-card resident-card">
+                    <img src="../week1/img/Cloudy-face-1.JPG" alt="Cloudy the Resident Cat"
+                        class="cat-image">
+                    <h3>Cloudy (Resident Chief)</h3>
+                    <p><strong>Temperament:</strong> Affectionate, Curious, Calm</p>
+                    <p class="cat-desc">Our official household master and absolute ruler.</p>
+                </div>
             </div>
         </section>
 
+        <!-- Footer & Back Navigation -->
         <footer>
             <a href="../index.html">
                 <img src="../week1/img/Back-icon.png" class="back-link" alt="Go back to homepage">
@@ -48,7 +59,7 @@
         </footer>
     </main>
 
-    <!-- ES Module Script -->
+    <!-- ES Module JavaScript Link -->
     <script src="webapi.js" type="module"></script>
 </body>
 
