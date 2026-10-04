@@ -21,8 +21,8 @@ body {
 }
 
 .home-icon {
-    width: 100%;
-    max-width: 180px;
+    width: 480px;
+    max-width:300px;
     height: auto;
     position: fixed;
     top: 15px;
