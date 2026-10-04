@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maverick</title>
+    <link rel="icon" type="image/png" href="../Week1/My First Web App/img/title-icon.png">
+    <link rel="stylesheet" href="css/activity6-4.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <header class="top-header">
+        <a href="../index.html">
+            <img src="../Week1/My First Web App/img/homepage.png" class="home-icon" alt="Homepage">
+        </a>
+    </header>
+
+    <main>
+        <h2>Maverick Shooting the Gate</h2>
+        <p id="game-desc">Dealer Chips: 1000 | Player Wallet: 100</p>
+
+        <div id="instruction-toggle"> Click to Toggle Game Instructions</div>
+        <div id="game-instructions">
+            <strong>Rules:</strong><br>
+            1. Click "Pillar" to deal two gate posts.<br>
+            2. Enter your bet and click "Place Bet".<br>
+            3. Click "Deal" to shoot the third card!<br>
+            - Inside: Win 200% bet.<br>
+            - Outside: Lose bet.<br>
+            - Hit post: Lose double bet.
+        </div>
+
+        <div class="status-box">
+            <span>Dealer Chips: <strong id="dealer-chips">1000</strong></span> |
+            <span>Player Wallet: <strong id="player-wallet">100</strong></span>
+        </div>
+
+        <div id="container">
+            <div class="card-slot"><img id="img-left" src="/img/card-back.png" alt="Left Pillar" class="card-img"></div>
+            <div class="card-slot"><img id="img-right" src="/img/card-back.png" alt="Right Pillar" class="card-img">
+            </div>
+            <div class="card-slot"><img id="img-shoot" src="/img/card-back.png" alt="Shoot Card" class="card-img"></div>
+        </div>
+
+        <div id="result-message" class="status-text">Step 1: Click "Pillar" to deal gate posts.</div>
+
+        <div id="controls">
+            <input type="number" id="bet-input" min="1" value="10" placeholder="Bet" disabled>
+            <button id="pillar-btn" class="control-button">Pillar</button>
+            <button id="bet-btn" class="control-button" disabled>Place Bet</button>
+            <button id="deal-btn" class="control-button" disabled>Deal</button>
+            <button id="next-btn" class="control-button" disabled>Next Game</button>
+            <button id="reset-btn" class="control-button">Reset</button>
+        </div>
+
+        <footer>
+            <a href="../index.html">
+                <img src="../Week1/My First Web App/img/Back-icon.png" class="back-link" alt="Go back to homepage">
+            </a>
+        </footer>
+    </main>
+
+    <script src="gameEngine.js"></script>
+    <script src="animation.js"></script>
+</body>
+
+</html>
