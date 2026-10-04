@@ -79,7 +79,7 @@ $(document).ready(function () {
         let shootVal = Math.floor(Math.random() * 13) + 1;
         let shootImg = GameEngine.getImagePath(shootVal);
 
-        $("#img-shoot").show().attr("src", backImg);
+        $("#img-shoot").attr("src", backImg);
         $("#img-shoot").fadeOut(200, function () {
             $(this).attr("src", shootImg).fadeIn(300, function () {
                 let res = GameEngine.evaluate(shootVal);
