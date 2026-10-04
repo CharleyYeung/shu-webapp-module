@@ -117,7 +117,7 @@ $(document).ready(function () {
         updateStatus();
         $("#img-left").attr("src", backImg);
         $("#img-right").attr("src", backImg);
-        $("#img-shoot").hide().attr("src", backImg);
+        $("#img-shoot").attr("src", backImg);
         $("#pillar-btn").prop("disabled", false);
         $("#bet-input").prop("disabled", true).val(10);
         $("#bet-btn").prop("disabled", true);
