@@ -12,7 +12,7 @@ const GameEngine = (function () {
     };
 
     function getCardImagePath(val) {
-        return `/img/${cardFiles[val]}`;
+        return `../week1/img/${cardFiles[val]}`;
     }
 
     function resetGame() {
