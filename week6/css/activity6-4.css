@@ -21,7 +21,8 @@ body {
 }
 
 .home-icon {
-    width: 480px;
+    width: 100%;
+    max-width: 180px;
     height: auto;
     position: fixed;
     top: 15px;
@@ -67,7 +68,8 @@ p {
 }
 
 #container {
-    width: 480px;
+    width: 100%;
+    max-width: 480px;
     height: 180px;
     margin: 0 auto 1.5rem auto;
     background: #2e7d32;
@@ -156,4 +158,11 @@ footer {
     width: 120px;
     height: auto;
     display: block;
+}
+
+@media (max-width: 600px) {
+    #container { width: 90%; height: 140px; }
+    .card-slot { width: 65px; height: 95px; }
+    .control-button { padding: 8px 10px; font-size: 0.9rem; margin: 4px 2px; }
+    input[type="number"] { width: 60px; }
 }
