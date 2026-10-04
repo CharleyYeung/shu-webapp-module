@@ -23,7 +23,6 @@ body {
 }
 
 .home-icon {
-    width: 480px;
     max-width:300px;
     height: auto;
     position: fixed;
