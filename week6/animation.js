@@ -1,6 +1,6 @@
 // Animation & Event Handler Module
 $(document).ready(function () {
-    const backImg = "/img/card-back.png";
+    const backImg = "../week1/img/card-back.png";
     let postData = null;
 
     function updateStatus() {
