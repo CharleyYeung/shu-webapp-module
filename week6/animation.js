@@ -1,7 +1,7 @@
-// Animation & Event Handler Module
 $(document).ready(function () {
     const backImg = "../week1/img/card-back.png";
     let postData = null;
+    let isBetPlaced = false;
 
     function updateStatus() {
         $("#dealer-chips").text(GameEngine.getDealer());
@@ -115,6 +115,8 @@ $("#bet-btn").click(function () {
     // Step 4: Next Game Button Click
     $("#next-btn").click(function () {
         $(this).prop("disabled", true);
+        isBetPlaced = false; 
+        $("#bet-btn").text("Place Bet");
         $("#img-left").attr("src", backImg);
         $("#img-right").attr("src", backImg);
         $("#img-shoot").attr("src", backImg);
@@ -126,6 +128,8 @@ $("#bet-btn").click(function () {
     $("#reset-btn").click(function () {
         GameEngine.reset();
         updateStatus();
+        isBetPlaced = false;
+        $("#bet-btn").text("Place Bet");
         $("#img-left").attr("src", backImg);
         $("#img-right").attr("src", backImg);
         $("#img-shoot").attr("src", backImg);
