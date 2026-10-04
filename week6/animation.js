@@ -51,31 +51,42 @@ $(document).ready(function () {
     });
 
     // Step 2: Place Bet Button Click
-    $("#bet-btn").click(function () {
+$("#bet-btn").click(function () {
         let bet = parseInt($("#bet-input").val());
         let wallet = GameEngine.getWallet();
 
-        if (isNaN(bet) || bet < 1) {
-            alert("Minimum investment is 1!");
-            return;
-        }
-        if (bet > wallet) {
-            alert("Bet cannot exceed your wallet asset!");
-            return;
-        }
+        if (!isBetPlaced) {
+            if (isNaN(bet) || bet < 1) {
+                alert("Minimum investment is 1!");
+                return;
+            }
+            if (bet > wallet) {
+                alert("Bet cannot exceed your wallet asset!");
+                return;
+            }
 
-        GameEngine.setBet(bet);
-        $("#bet-input").prop("disabled", true);
-        $("#bet-btn").prop("disabled", true);
-
-        // Step 3: Enable Deal button
-        $("#deal-btn").prop("disabled", false);
-        $("#result-message").text("Step 3: Click 'Deal' to shoot the gate!");
+            GameEngine.setBet(bet);
+            isBetPlaced = true;
+            $(this).text("Undo Bet"); 
+            $("#bet-input").prop("disabled", true); 
+            
+            // Step 3: Enable Deal button
+            $("#deal-btn").prop("disabled", false);
+            $("#result-message").text("Bet placed. Click 'Deal' or click 'Undo Bet' to modify.");
+        } else {
+            isBetPlaced = false;
+            $(this).text("Place Bet");
+            $("#bet-input").prop("disabled", false); 
+            
+            $("#deal-btn").prop("disabled", true);
+            $("#result-message").text("Step 2: Modify bet and click 'Place Bet'.");
+        }
     });
-
+    
     // Step 3: Deal Button Click
     $("#deal-btn").click(function () {
         $(this).prop("disabled", true);
+        $("#bet-btn").prop("disabled", true);
         let shootVal = Math.floor(Math.random() * 13) + 1;
         let shootImg = GameEngine.getImagePath(shootVal);
 
