@@ -70,7 +70,7 @@ $(document).ready(function () {
     // --- Card Mapping ---
     window.getCardImagePath = function (card) {
         let prefix = '';
-        let folder = '/img/';
+        let folder = '../week1/img/';
 
         if (card.suit === 'spades') prefix = 's-';
         else if (card.suit === 'clubs') prefix = 'c-';
