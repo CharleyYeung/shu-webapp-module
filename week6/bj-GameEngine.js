@@ -1,13 +1,10 @@
-/**
- * Blackjack Game Engine
- * Handles game control logic, state management, deck creation, card mapping, and win/loss/bankruptcy checks.
- */
+/* Blackjack Game Engine */
 
 $(document).ready(function () {
 
-    // --- State Variables & LocalStorage Loading ---
+    // State Variables & LocalStorage Loading
     let playerWallet = localStorage.getItem('bj_wallet') ? parseInt(localStorage.getItem('bj_wallet')) : 1000;
-    let dealerChips = localStorage.getItem('bj_dealer') ? parseInt(localStorage.getItem('bj_dealer')) : 500;
+    let dealerChips = localStorage.getItem('bj_dealer') ? parseInt(localStorage.getItem('bj_dealer')) : 20000;
     let cpu1Chips = localStorage.getItem('bj_cpu1') ? parseInt(localStorage.getItem('bj_cpu1')) : 500;
     let cpu2Chips = localStorage.getItem('bj_cpu2') ? parseInt(localStorage.getItem('bj_cpu2')) : 500;
 
@@ -16,7 +13,7 @@ $(document).ready(function () {
     let hasPeekDealer = localStorage.getItem('bj_peekD') === 'true';
 
     let deck = [];
-    let currentBet = 50;
+    let currentBet = 100;
 
     let hands = {
         dealer: [],
@@ -46,7 +43,7 @@ $(document).ready(function () {
         updateShopUI();
     }
 
-    // --- Shop UI State ---
+    // Shop UI State
     function updateShopUI() {
         if (hasDoubleReturn || playerWallet < 200) {
             $('#buy-double-btn').prop('disabled', true).css({ 'opacity': '0.5', 'cursor': 'not-allowed' });
@@ -67,7 +64,7 @@ $(document).ready(function () {
         }
     }
 
-    // --- Card Mapping ---
+    // Card Mapping
     window.getCardImagePath = function (card) {
         let prefix = '';
         let folder = '../week1/img/';
@@ -133,7 +130,7 @@ $(document).ready(function () {
         return score;
     }
 
-    // --- Deal Action ---
+    // Deal Action
     $('#deal-btn').click(function () {
         currentBet = parseInt($('#bet-input').val());
         if (isNaN(currentBet) || currentBet <= 0 || currentBet > playerWallet) {
@@ -164,7 +161,7 @@ $(document).ready(function () {
         $('#result-message').text('Your turn: Hit or Stand.');
     });
 
-    // --- Hit Action with Bust Settlement & CPU Status ---
+    // Hit Action with Bust Settlement & CPU Status
     $('#hit-btn').click(function () {
         hands.player.push(deck.pop());
         if (window.renderPlayer) {
@@ -236,7 +233,7 @@ $(document).ready(function () {
         }
     });
 
-    // --- Stand Action ---
+    // Stand Action
     $('#stand-btn').click(function () {
         $('#hit-btn').prop('disabled', true);
         $('#stand-btn').prop('disabled', true);
@@ -269,7 +266,7 @@ $(document).ready(function () {
         determineWinners();
     }
 
-    // --- Chip Settlement and Status Update ---
+    // Chip Settlement and Status Update
     function determineWinners() {
         let dealerScore = calculateHandScore(hands.dealer);
         let playerScore = calculateHandScore(hands.player);
@@ -363,7 +360,7 @@ $(document).ready(function () {
         }
     }
 
-    // --- Next Round ---
+    // Next Round
     $('#next-btn').click(function () {
         $('#win-banner').remove();
         $('#bet-input').prop('disabled', false);
@@ -376,7 +373,7 @@ $(document).ready(function () {
         if (cpu2Chips > 0) $('#cpu2-score').text('-');
     });
 
-    // --- Skill Shop ---
+    // Skill Shop
     $('#shop-btn').click(() => {
         $('#shop-modal').show();
         updateShopUI();
@@ -423,7 +420,7 @@ $(document).ready(function () {
         }
     });
 
-    // --- Completely Reset Game ---
+    // Completely Reset Game
     $('#reset-btn').click(function () {
         if (confirm('Are you sure you want to reset all progress and wallet?')) {
             localStorage.clear();
