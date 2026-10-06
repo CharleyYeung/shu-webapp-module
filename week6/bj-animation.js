@@ -16,7 +16,7 @@ $(document).ready(function () {
             let slotHtml = `
                 <div class="card-slot ${isNew ? '' : 'flipped'}" style="${isNew ? 'opacity: 0;' : 'opacity: 1;'}">
                     <div class="card-inner" style="${isNew ? 'transition: transform 0.5s;' : ''}">
-                        <div class="card-back-face"><img src="/img/card-back.png" class="card-img" alt="Back"></div>
+                        <div class="card-back-face"><img src="../week1/img/card-back.png" class="card-img" alt="Back"></div>
                         <div class="card-front"><img src="${window.getCardImagePath(card)}" class="card-img" alt="Card"></div>
                     </div>
                 </div>`;
@@ -46,11 +46,11 @@ $(document).ready(function () {
         // 1. Render Dealer
         hands.dealer.forEach((card, index) => {
             let isHidden = (hideDealerHoleCard && index === 1);
-            let imgSrc = isHidden ? '/img/card-back.png' : window.getCardImagePath(card);
+            let imgSrc = isHidden ? '../week1/img/card-back.png' : window.getCardImagePath(card);
             let slotHtml = `
                 <div class="card-slot ${isHidden ? '' : 'flipped'}" style="opacity: 1;">
                     <div class="card-inner">
-                        <div class="card-back-face"><img src="/img/card-back.png" class="card-img" alt="Back"></div>
+                        <div class="card-back-face"><img src="../week1/img/card-back.png" class="card-img" alt="Back"></div>
                         <div class="card-front"><img src="${imgSrc}" class="card-img" alt="Card"></div>
                     </div>
                 </div>`;
@@ -59,14 +59,14 @@ $(document).ready(function () {
 
         // 2. Render CPU 1
         if (cpu1Chips <= 0) {
-            $('#cpu1-container').html(`<img src="../week1/img/cloudy-lose.png" class="cloudy-lose-img" alt="CPU 1 Bankrupt">`);
+            $('#cpu1-container').html(`<img src="../week1/img/Cloudy-lose.jpeg" class="cloudy-lose-img" alt="CPU 1 Bankrupt">`);
             $('#cpu1-score').text('BANKRUPT');
         } else {
             hands.cpu1.forEach(card => {
                 let slotHtml = `
                     <div class="card-slot flipped" style="opacity: 1;">
                         <div class="card-inner">
-                            <div class="card-back-face"><img src="/img/card-back.png" class="card-img" alt="Back"></div>
+                            <div class="card-back-face"><img src="../week1/img/card-back.png" class="card-img" alt="Back"></div>
                             <div class="card-front"><img src="${window.getCardImagePath(card)}" class="card-img" alt="Card"></div>
                         </div>
                     </div>`;
@@ -77,14 +77,14 @@ $(document).ready(function () {
 
         // 3. Render CPU 2
         if (cpu2Chips <= 0) {
-            $('#cpu2-container').html(`<img src="../week1/img/cloudy-lose.png" class="cloudy-lose-img" alt="CPU 2 Bankrupt">`);
+            $('#cpu2-container').html(`<img src="../week1/img/Cloudy-lose.jpeg" class="cloudy-lose-img" alt="CPU 2 Bankrupt">`);
             $('#cpu2-score').text('BANKRUPT');
         } else {
             hands.cpu2.forEach(card => {
                 let slotHtml = `
                     <div class="card-slot flipped" style="opacity: 1;">
                         <div class="card-inner">
-                            <div class="card-back-face"><img src="/img/card-back.png" class="card-img" alt="Back"></div>
+                            <div class="card-back-face"><img src="../week1/img/card-back.png" class="card-img" alt="Back"></div>
                             <div class="card-front"><img src="${window.getCardImagePath(card)}" class="card-img" alt="Card"></div>
                         </div>
                     </div>`;
@@ -98,7 +98,7 @@ $(document).ready(function () {
             let slotHtml = `
                 <div class="card-slot flipped" style="opacity: 1;">
                     <div class="card-inner">
-                        <div class="card-back-face"><img src="/img/card-back.png" class="card-img" alt="Back"></div>
+                        <div class="card-back-face"><img src="../week1/img/card-back.png" class="card-img" alt="Back"></div>
                         <div class="card-front"><img src="${window.getCardImagePath(card)}" class="card-img" alt="Card"></div>
                     </div>
                 </div>`;
