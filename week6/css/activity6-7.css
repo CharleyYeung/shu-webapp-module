@@ -18,6 +18,11 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    transition: top 0.3s ease-in-out;
+}
+
+.top-header.header-hidden {
+    top: -80px; 
 }
 
 .home-icon {
@@ -26,7 +31,7 @@ body {
     height: auto;
     position: fixed;
     top: 15px;
-    left: 25px;
+    left: 15px;
     z-index: 1001;
 }
 
