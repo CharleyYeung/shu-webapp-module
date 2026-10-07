@@ -121,4 +121,23 @@ $(document).ready(function () {
             $(this).css('transform', 'scale(1)');
         }
     );
+
+    let lastScrollTop = 0;
+    const delta = 5; 
+
+    $(window).scroll(function() {
+        let currentScroll = $(this).scrollTop();
+    
+        if (Math.abs(lastScrollTop - currentScroll) <= delta) {
+            return;
+        }
+        if (currentScroll > lastScrollTop && currentScroll > 90) {
+            $('.top-header').addClass('header-hidden');
+        } else {
+            $('.top-header').removeClass('header-hidden');
+        }
+    
+        lastScrollTop = currentScroll;
+    });
+    
 });
