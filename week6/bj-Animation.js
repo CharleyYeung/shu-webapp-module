@@ -1,7 +1,4 @@
-/**
- * Blackjack Animation Module
- * Handles table rendering, player hit animations, and micro-interactions.
- */
+/* Blackjack Animation Module */
 
 $(document).ready(function () {
     console.log("Blackjack Animation Module Loaded.");
