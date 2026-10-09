@@ -185,3 +185,31 @@ footer {
     height: auto;
     display: block;
 }
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .top-header {
+        height: 70px;
+    }
+
+    .home-icon {
+        width: 140px; 
+    }
+
+    main {
+        margin: 90px auto 0 auto; 
+        padding: 0.5rem;
+    }
+
+    .status-box .row > div {
+        margin-bottom: 8px; 
+    }
+
+    .card-slot {
+        width: 75px; 
+        height: 75px;
+    }
+}
